@@ -7,10 +7,13 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="lib/jquery-3.1.1.min.js"></script>
 		<script src="js/script.js"></script>
+		<script src="js/input.js"></script>
+		<script src="js/result.js"></script>
 	</head>
 	<body>
 		<h1>Find yourself</h1>
 		<h2>A tool for setting yourself SMART goals for the future.</h2>
+		<h3 id="step"></h3>
 		<p>Further description?</p>
 		<canvas id="current" width="800" height="600" style="border:1px solid #000000;">
 			
@@ -18,5 +21,6 @@
 		<input type="range" id="work" value="50">
 		<input type="range" id="leisure" value="50">
 		<input type="range" id="motivation" value="50">
+		<button id="next">Next</button>
 	</body>
 </html>
