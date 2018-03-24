@@ -3,25 +3,21 @@ var resultMargin = 150
 
 var currentResult = {
 	work: {},
-	leisure: {},
-	motivation: {}
+	leisure: {}
 }
 
 var futureResult = {
 	work: {},
-	leisure: {},
-	motivation: {}
+	leisure: {}
 }
 
 function saveResult(type) {
 	if (type == 'current') {
 		for (var i = 0; i < currentCircles.length; i++) {
 			if (i == 0) {
-				currentResult.work = jQuery.extend(true, {}, currentCircles[i]);
+				currentResult.work = $.extend(true, {}, currentCircles[i]);
 			} else if (i == 1) {
-				currentResult.leisure = jQuery.extend(true, {}, currentCircles[i]);
-			} else {
-				currentResult.motivation = jQuery.extend(true, {}, currentCircles[i]);
+				currentResult.leisure = $.extend(true, {}, currentCircles[i]);
 			}
 		}
 	} else if (type == 'future') {
@@ -30,8 +26,6 @@ function saveResult(type) {
 				futureResult.work = currentCircles[i]
 			} else if (i == 1) {
 				futureResult.leisure = currentCircles[i]
-			} else {
-				futureResult.motivation = currentCircles[i]
 			}
 		}
 	}
@@ -65,6 +59,11 @@ function drawResult() {
 }
 
 function showResult() {
+	$('#work').remove()
+	$('#leisure').remove()
+	$('#motivation').remove()
+	$('#next').remove()
+
 	drawResult()
 
 	console.log('CURRENT:')

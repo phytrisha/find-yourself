@@ -3,26 +3,19 @@ var curStep = 1
 
 var workCircle = {
 	radius: 50,
-	x: 350,
+	x: 375,
 	y: 300,
 	color: '#ff0000aa'
 }
 
 var leisureCircle = {
 	radius: 50,
-	x: 450,
+	x: 425,
 	y: 300,
 	color: '#00ff00aa'
 }
 
-var motivationCircle = {
-	radius: 50,
-	x: 400,
-	y: 350,
-	color: '#0000ffaa'
-}
-
-var currentCircles = [workCircle, leisureCircle, motivationCircle]
+var currentCircles = [workCircle, leisureCircle]
 
 // global init
 $(document).ready(function() {
@@ -54,8 +47,9 @@ function draw(target, circle) {
 	ctx.beginPath()
 	ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI)
 	ctx.closePath()
-	ctx.fillStyle = circle.color
-	ctx.fill()
+	// ctx.fillStyle = circle.color
+	// ctx.fill()
+	ctx.stroke()
 }
 
 function clear() {
