@@ -6,20 +6,40 @@
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<script src="lib/jquery-3.1.1.min.js"></script>
+		<script src="js/colors.js"></script>
+		<script src="js/content.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/input.js"></script>
 		<script src="js/result.js"></script>
+		<script src="js/tips.js"></script>
 	</head>
 	<body>
 		<h1>Find yourself</h1>
 		<h2>A tool for setting yourself SMART goals for the future.</h2>
 		<h3 id="step"></h3>
 		<p>Further description?</p>
-		<canvas id="current" width="800" height="600" style="border:1px solid #000000;">
+		<canvas id="current" width="800" height="600">
 			
 		</canvas>
-		<input type="range" id="work" value="50">
-		<input type="range" id="leisure" value="50">
+		<input type="range" id="workLifeAmount" value="100" min="0" max="200">
+		<input type="range" id="workLifeBlend" value="0" min="0" max="100" style="display: none;">
+		<!-- <input type="range" id="leisure" value="50"> -->
 		<button id="next">Next</button>
+
+		<div id="result" style="display: none;">
+			<p id="result">The result of the test will appear here.</p>
+			<button id="plan">Plan the future</button>
+		</div>
+
+		<div id="future" style="display: none;">
+			<input type="range" id="futureWorkLifeAmount" value="100" min="0" max="200">
+			<button id="futNext">Next</button>
+			<input type="range" id="futureWorkLifeBlend" value="0" min="0" max="100" style="display: none;">
+		</div>
+
+		<div id="tips" style="display: none;">
+			<h1>Tips for the future:</h1>
+			<p>Show me some tips here.</p>
+		</div>
 	</body>
 </html>

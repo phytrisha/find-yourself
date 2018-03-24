@@ -1,25 +1,41 @@
-var steps = ['current', 'future', 'done']
+var steps = ['amount', 'blend', 'done', 'futureAmount', 'futureBlend', 'futureTips']
 var curStep = 1
 
 var workCircle = {
-	radius: 50,
-	x: 375,
+	radius: 100,
+	x: 300,
 	y: 300,
-	color: '#ff0000aa'
+	color: activeCircleColor
 }
 
 var leisureCircle = {
-	radius: 50,
-	x: 425,
+	radius: 100,
+	x: 500,
 	y: 300,
-	color: '#00ff00aa'
+	color: activeCircleColor
+}
+
+var futureWorkCircle = {
+	radius: 100,
+	x: 300,
+	y: 300,
+	color: activeCircleColor
+}
+
+var futureLeisureCircle = {
+	radius: 100,
+	x: 500,
+	y: 300,
+	color: activeCircleColor
 }
 
 var currentCircles = [workCircle, leisureCircle]
 
+var blendAmount = 0
+var futureBlendAmount = 0
+
 // global init
 $(document).ready(function() {
-
 	// activate all the input
 	defineInput()
 	
@@ -28,13 +44,13 @@ $(document).ready(function() {
 
 	// update step display
 	$('#step').html(steps[curStep - 1])
-
 })
 
 function update() {
-
+	// clear canvas before redrawing
 	clear()
 
+	// loop through all circles and draw them
 	for (var i = 0; i < currentCircles.length; i++) {
 		draw('current', currentCircles[i])
 	}
@@ -49,11 +65,12 @@ function draw(target, circle) {
 	ctx.closePath()
 	// ctx.fillStyle = circle.color
 	// ctx.fill()
+	ctx.strokeStyle = circle.color
 	ctx.stroke()
 }
 
-function clear() {
-	// clear canvas for redrawing purposes
+// clear canvas for redrawing purposes
+function clear() {	
 	var c = document.getElementById('current')
 	var ctx = c.getContext('2d')
 	ctx.clearRect(0, 0, c.width, c.height)
