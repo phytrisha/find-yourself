@@ -12,34 +12,55 @@
 		<script src="js/input.js"></script>
 		<script src="js/result.js"></script>
 		<script src="js/tips.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|Gudea:400,400i,700" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Find yourself</h1>
-		<h2>A tool for setting yourself SMART goals for the future.</h2>
-		<h3 id="step"></h3>
-		<p>Further description?</p>
-		<canvas id="current" width="800" height="600">
-			
-		</canvas>
-		<input type="range" id="workLifeAmount" value="100" min="0" max="200">
-		<input type="range" id="workLifeBlend" value="0" min="0" max="100" style="display: none;">
-		<!-- <input type="range" id="leisure" value="50"> -->
-		<button id="next">Next</button>
+        <div class= "headder">
+            <h1>Find yourself</h1>
+            <p id="description">Eine super tolle Beschreibung die alles super gut erklärt und danach alle super viel darüber wissen, warum Mark und ich am Wochenende keine Zeit haben, weil wir ein Vorbild für andere Gruppen sind und somit intern auch die Strebergruppe genannt werden.</p>
+        </div>
+        
+        <div class="content">
+            <canvas id="current" width="800" height="600">
 
-		<div id="result" style="display: none;">
-			<p id="result">The result of the test will appear here.</p>
-			<button id="plan">Plan the future</button>
-		</div>
+            </canvas>
+            <div class="slider">
+                <p id="work">work</p>
+                <p id="life">life</p>
+                <input type="range" id="workLifeAmount" value="100" min="0" max="200">
+                <input type="range" id="workLifeBlend" value="0" min="0" max="100" style="display: none;">
+                <!-- <input type="range" id="leisure" value="50"> -->
+            </div>
+            <p class="sliderDescription">How much time and energy do you invest in work, how much in life? Think about your day to day life and figure out, what makes up your day at the moment.</p>
+            <div class="buttonArea">
+                <button id="next">NEXT &gt;</button>
+            </div>
 
-		<div id="future" style="display: none;">
-			<input type="range" id="futureWorkLifeAmount" value="100" min="0" max="200">
-			<button id="futNext">Next</button>
-			<input type="range" id="futureWorkLifeBlend" value="0" min="0" max="100" style="display: none;">
-		</div>
+            <div id="result" style="display: none;">
+                <h2>Your current situation:</h2>
+                <p id="result">The result of the test will appear here.</p>
+                <div class="buttonArea">
+                    <button id="plan">PLAN THE FUTURE</button>
+                </div>
+            </div>
 
-		<div id="tips" style="display: none;">
-			<h1>Tips for the future:</h1>
-			<p>Show me some tips here.</p>
-		</div>
+            <div id="future" style="display: none;">
+                <div class="slider">
+                    <input type="range" id="futureWorkLifeAmount" value="100" min="0" max="200">
+                </div>
+                <div class="slider">
+                    <input type="range" id="futureWorkLifeBlend" value="0" min="0" max="100" style="display: none;">
+                </div>
+                <div class="buttonArea">
+                    <button id="futNext">NEXT &gt;</button>
+                </div>
+            </div>
+
+            <div id="tips" style="display: none;">
+                <h2>Tips for the future:</h2>
+                <p id="tipsText">Show me some tips here.</p>
+            </div>
+            <div class="footer"></div>
+        </div>
 	</body>
 </html>
